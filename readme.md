@@ -22,6 +22,7 @@
     * type tsrfce
 - npm install react-social-icons
 - framer motion
+- npm i react-simple-typewriter
 
 
 
