@@ -5,7 +5,7 @@ import Hero from '../components/Hero'
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className='text-[#3f3d56] h-screen'>
       <Head>
         <title>Andre's Portfolio | Home</title>
       </Head>
