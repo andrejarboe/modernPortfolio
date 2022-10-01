@@ -2,8 +2,8 @@ import React from 'react'
 
 type Props = {}
 
-const About = (props: Props) => {
+export default function About({}: Props) {
   return (
-    <div>About</div>
+    <div className='flex'>About</div>
   )
 }
