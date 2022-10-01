@@ -25,17 +25,17 @@ function Header({ }: Props) {
                 {/* Social Icons  */}
                 <SocialIcon
                     url="https://www.linkedin.com/in/andre-jarboe-ii/"
-                    fgColor='gray'
+                    fgColor='#3f3d56'
                     bgColor='transparent'
                 />
                 <SocialIcon
                     url="https://www.linkedin.com/in/andre-jarboe-ii/"
-                    fgColor='gray'
+                    fgColor='#3f3d56'
                     bgColor='transparent'
                 />
                 <SocialIcon
                     url="https://www.linkedin.com/in/andre-jarboe-ii/"
-                    fgColor='gray'
+                    fgColor='#3f3d56'
                     bgColor='transparent'
                 />
             </motion.div>
@@ -53,14 +53,14 @@ function Header({ }: Props) {
                 transition={{
                     duration: 1.5
                 }}
-                className='flex flex-row items-center text-gray-300 cursor-pointer'>
+                className='flex flex-row items-center text-secondary cursor-pointer'>
                 <SocialIcon
                     className='cursor-pointer'
                     network="email"
-                    fgColor='gray'
+                    fgColor='#3f3d56'
                     bgColor='transparent'
                 />
-                <p className='uppercase hidden md:inline-flex text-small text-gray-400'>Get In Touch</p>
+                <p className='uppercase hidden md:inline-flex text-small text-secondary'>Get In Touch</p>
             </motion.div>
         </header>
     )
