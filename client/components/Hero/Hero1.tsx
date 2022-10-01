@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import React from 'react'
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
-import BackgroundCircles from './BackgroundCircles'
+import BackgroundCircles from '../Animations/BackgroundCircles'
 
 type Props = {}
 
-export default function Hero({ }: Props) {
+export default function Hero1({ }: Props) {
     const [text] = useTypewriter({
         words: [
             'Hi, my name is Andre Jarboe',
