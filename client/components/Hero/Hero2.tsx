@@ -1,20 +1,21 @@
 import React from 'react'
+import { urlFor } from '../../sanity'
+import { PageInfo } from '../../typings'
 
-type Props = {}
+type Props = {
+  pageInfo: PageInfo
+}
 
-export default function Hero2({}: Props) {
+export default function Hero2({ pageInfo }: Props) {
   return (
     <section className="mt-12 mx-auto container max-w-7xl py-12 px-4 flex">
       <div className="w-full lg:w-3/5 flex flex-col my-auto ">
         <p className="text-2xl font-light">
-          Hi, my name is <span className="text-primary">Andre Jarboe,</span> I'am a 
+          Hi, my name is <span className="text-primary">{pageInfo.name},</span> I'am a 
         </p>
-        <h1 className="text-6xl font-extrabold text-[#3f3d56]">Software Engineer</h1>
+        <h1 className="text-6xl font-extrabold text-[#3f3d56]">{pageInfo.role}</h1>
         <p className="text-lg text-gray-600 font-light leading-relaxed pt-8">
-          I enjoy building tools that impact. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Itaque quasi perspiciatis quis deserunt
-          quaerat voluptatum perferendis eos fugit, in ut facere iusto quam
-          minima laboriosam necessitatibus porro aspernatur! Ullam, minus.
+         {pageInfo?.heroInfo}
         </p>
 
         <div className="mt-8 flex ">
@@ -37,11 +38,9 @@ export default function Hero2({}: Props) {
         </div>
       </div>
       <div className="lg:w-2/5 justify-end">
-        {/* <img src="https://cdn.devdojo.com/images/january2022/heronew.png" /> */}
         <img
-          // className="hidden h-60 space-y-5 px-4 md:inline-flex lg:h-96"
           className="hidden md:block"
-          src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80"
+          src={urlFor(pageInfo?.heroImage).url()}
           alt="abstract pattern"
         />
       </div>

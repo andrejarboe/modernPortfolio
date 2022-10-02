@@ -30,7 +30,7 @@ const Home = ({ projects, skills, pageInfo, experiences, socials }: Props) => {
         <title>Andre's Portfolio | Home</title>
       </Head>
       <Header2 />
-      <Hero2 />
+      <Hero2 pageInfo={pageInfo}/>
       <Projects2 projects={projects} />
       <ContactMe />
       <Footer socials={socials} />
