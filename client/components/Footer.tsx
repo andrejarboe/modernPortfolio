@@ -37,6 +37,7 @@ export default function Footer({ socials }: Props) {
         <div className="mt-8 flex justify-center space-x-6">
           {socials.map((social) => (
             <SocialIcon
+              key={social._id}
               url={social.url}
               fgColor='#3f3d56'
               bgColor='transparent'

@@ -21,7 +21,7 @@ type Props = {
   socials: Social[];
 };
 
-const Home = ({projects, skills, pageInfo, experiences, socials }: Props) => {
+const Home = ({ projects, skills, pageInfo, experiences, socials }: Props) => {
   return (
     <div
     // className='text-secondary h-screen snap-y snap-mandatory overflow-scroll z-0'
@@ -31,7 +31,7 @@ const Home = ({projects, skills, pageInfo, experiences, socials }: Props) => {
       </Head>
       <Header2 />
       <Hero2 />
-      <Projects2 />
+      <Projects2 projects={projects} />
       <ContactMe />
       <Footer socials={socials} />
     </div>
