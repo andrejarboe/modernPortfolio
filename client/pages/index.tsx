@@ -1,18 +1,27 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps } from 'next'
 import Head from 'next/head'
-import About from '../components/About/About'
 import ContactMe from '../components/ContactMe'
 import Footer from '../components/Footer'
-import Header1 from '../components/Header/Header1'
 import Header2 from '../components/Header/Header2'
-import Hero from '../components/Hero/Hero1'
 import Hero2 from '../components/Hero/Hero2'
-import Projects from '../components/Projects'
 import Projects2 from '../components/Projects2'
-import Projects3 from '../components/Projects3'
-import Skills from '../components/Skills/Skills'
 
-const Home: NextPage = () => {
+import { Experience, PageInfo, Project, Skill, Social } from "../typings";
+import { fetchPageInfo } from "../utils/fetchPageInfo";
+import { fetchExperiences } from "../utils/fetchExperiences";
+import { fetchSkills } from "../utils/fetchSkills";
+import { fetchProjects } from "../utils/fetchProjects";
+import { fetchSocial } from "../utils/fetchSocials";
+
+type Props = {
+  pageInfo: PageInfo;
+  experiences: Experience[];
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+};
+
+const Home = ({ projects, skills, pageInfo, experiences, socials }: Props) => {
   return (
     <div
     // className='text-secondary h-screen snap-y snap-mandatory overflow-scroll z-0'
@@ -22,29 +31,34 @@ const Home: NextPage = () => {
       </Head>
       <Header2 />
       <Hero2 />
-      {/* <Skills /> */}
       <Projects2 />
       <ContactMe />
       <Footer />
-      {/* <Projects3 /> */}
-      {/* <Header1 /> */}
-      {/* Hero */}
-      {/* <section id='hero' className='snap-center'>
-        <Hero />
-      </section> */}
-      {/* Skills */}
-      {/* Projects */}
-      {/* <section>
-        <Projects />
-      </section> */}
-      {/* Experience */}
-      {/* About */}
-      {/* <section>
-        <About />
-      </section> */}
-      {/* Contact Me */}
     </div>
   )
 }
 
 export default Home
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocial();
+
+  return {
+    props: {
+      pageInfo,
+      experiences,
+      skills,
+      projects,
+      socials,
+    },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 10,
+  };
+
+}
