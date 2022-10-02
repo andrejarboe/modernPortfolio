@@ -30,12 +30,12 @@ export default {
       },
       {
         name: "linkToBuild",
-        title: "LinkToBuild",
+        title: "Link To Build",
         type: "url",
       },
       {
         name: "linkToRepo",
-        title: "LinkToRepo",
+        title: "Link To Repo",
         type: "url",
       },
     ],
