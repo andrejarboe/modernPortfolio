@@ -1,6 +1,6 @@
 export default {
   name: 'pageInfo',
-  title: 'Post',
+  title: 'Page Info',
   type: 'document',
   fields: [
     {
