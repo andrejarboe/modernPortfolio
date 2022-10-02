@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import ContactMe from '../components/ContactMe'
